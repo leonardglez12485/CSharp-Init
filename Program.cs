@@ -9,6 +9,7 @@ partial class Program
        //SalryCalculator();
        //DisplayDateTime();
        //DaysOfLife();
-       DaysUntilNextBirthday();
+       //DaysUntilNextBirthday();
+       HandleNullable();
     }
 }

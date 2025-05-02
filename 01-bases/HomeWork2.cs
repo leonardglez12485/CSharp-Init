@@ -20,40 +20,30 @@ partial class Program
     }
     static void DaysUntilNextBirthday()
     {
-       Console.WriteLine("Enter your birth date (yyyy-MM-dd): ");
+        Console.WriteLine("Enter your birth date (yyyy-MM-dd): ");
         string? input = Console.ReadLine();
-        if(DateTime.TryParseExact(input, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime birthDate)){
+        if (DateTime.TryParseExact(input, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime birthDate))
+        {
             DateTime today = DateTime.Now.Date;
             DateTime actualBirthdate = new DateTime(today.Year, birthDate.Month, birthDate.Day);
             TimeSpan daysUntilBirthday = actualBirthdate - today;
-            if(daysUntilBirthday.TotalDays < 0)
-            {
-           
-                daysUntilBirthday = TimeSpan.FromDays(Math.Abs(daysUntilBirthday.TotalDays));
-                Console.WriteLine($"Your birthday was {daysUntilBirthday.Days} days ago.");
+            daysUntilBirthday = daysUntilBirthday.TotalDays < 0
+              ? TimeSpan.FromDays(Math.Abs(daysUntilBirthday.TotalDays))
+              : daysUntilBirthday;
 
-            } 
-            else
-            if (daysUntilBirthday.TotalDays == 0)
-            {
-                Console.WriteLine($"Happy Birthday! \uD83C\uDF89\uD83C\uDF82");
-            }
-            else
-            {
-                Console.WriteLine($"There are {daysUntilBirthday.Days} days until your next birthday.");
-            }
-            // if (actualBirthdate < today)
-            // {
-            //     actualBirthdate = actualBirthdate.AddYears(1);
-            // }
-            // TimeSpan daysUntilBirthday = actualBirthdate - today;
-            // Console.WriteLine($"There are {daysUntilBirthday.Days} days until your next birthday.");
+            string message = daysUntilBirthday.TotalDays == 0
+                ? "Happy Birthday! 🎉🎂"
+                : daysUntilBirthday.TotalDays < 0
+                    ? $"Your birthday was {daysUntilBirthday.Days} days ago."
+                    : $"There are {daysUntilBirthday.Days} days until your next birthday.";
+
+            Console.WriteLine(message);
         }
         else
         {
             Console.WriteLine("Invalid date format. Please use yyyy-MM-dd.");
-            
+
         }
-        
+
     }
 }
