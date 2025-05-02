@@ -6,6 +6,9 @@ partial class Program
        // NumericValues();
        //StringType();
        //Salesreport();
-       SalryCalculator();
+       //SalryCalculator();
+       //DisplayDateTime();
+       //DaysOfLife();
+       DaysUntilNextBirthday();
     }
 }

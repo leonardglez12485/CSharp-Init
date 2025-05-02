@@ -12,3 +12,4 @@
 /Users/leonard/Documents/Develop/C#/HelloApp/obj/Debug/net9.0/HelloApp.pdb
 /Users/leonard/Documents/Develop/C#/HelloApp/obj/Debug/net9.0/HelloApp.genruntimeconfig.cache
 /Users/leonard/Documents/Develop/C#/HelloApp/obj/Debug/net9.0/ref/HelloApp.dll
+/Users/leonard/Documents/Develop/C#/HelloApp/obj/Debug/net9.0/HelloApp.sourcelink.json
